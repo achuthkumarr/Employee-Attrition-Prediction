@@ -145,7 +145,7 @@ def predict():
     df['YearsWithCurrManager_bool'] = df['YearsWithCurrManager'].apply (lambda x: 1 if x < 1 else 0)
     df.drop ('YearsWithCurrManager',axis=1,inplace=True)
 
-    # Convert Categorical to Numerical
+    # Convert Categorical to Numerical 
     # Buisness Travel
     if BusinessTravel == 'Rarely':
         df['BusinessTravel_Rarely'] = 1
@@ -263,7 +263,7 @@ def predict():
         df['MaritalStatus_Divorced'] = 1
     df.drop ('MaritalStatus',axis=1,inplace=True)
 
-    # Overtime
+    # Overtime 
     if OverTime == 'Yes':
         df['OverTime_Yes'] = 1
         df['OverTime_No'] = 0
@@ -272,7 +272,7 @@ def predict():
         df['OverTime_No'] = 1
     df.drop ('OverTime',axis=1,inplace=True)
 
-    # Stock Option Level
+    # Stock Option Level 
     if StockOptionLevel == 0:
         df['StockOptionLevel_0'] = 1
         df['StockOptionLevel_1'] = 0
@@ -354,7 +354,7 @@ def predict():
         df['TrainingTimesLastYear_6'] = 1
     df.drop ('TrainingTimesLastYear',axis=1,inplace=True)
 
-    # df.to_csv ('features.csv',index=False)
+    # df.to_csv ('features.csv',index=False) 
 
     prediction = model.predict (df)
 
